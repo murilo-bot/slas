@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="redirectURI_SLAS">
+                <display-name xml:lang="x-default">Redirect URI - SLAS Login</display-name>
+                <description xml:lang="x-default">Redirect URI used for SLAS Login</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="restoreSessionAttributes_SLAS">
+                <display-name xml:lang="x-default">Restore Session Attributes</display-name>
+                <description xml:lang="x-default">When using plugin_slas, session attributes will not be restored after a successful OCAPI session bridge. Enable this site preference to make an additional http request to a controller which will restore the original session.custom and session.privacy attributes. Please ensure you set your storefront credentials in the "controller.internal.cred" service credential; these credentials are required in all (SIG and PIG) environments.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="saveRefreshToken_Always">
+                <display-name xml:lang="x-default">Always Save Refresh token</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="ocapiSessionBridgeURI_SLAS">
+                <display-name xml:lang="x-default">SFCC OCAPI Session Bridge URI</display-name>
+                <description xml:lang="x-default">Request URI used for OCAPI Session - SLAS</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="clientIPHeaderName">
+                <display-name xml:lang="x-default">Client IP Header Name</display-name>
+                <description xml:lang="x-default">The header name used to passthrough the client IP. This must match the Client IP Header Name set in Customer CDN settings in Business Manager.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <default-value>x-client-ip</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="SLAS Plugin">
+                <display-name xml:lang="x-default">SLAS Plugin Configurations</display-name>
+                <attribute attribute-id="redirectURI_SLAS"/>
+                <attribute attribute-id="saveRefreshToken_Always"/>
+                <attribute attribute-id="ocapiSessionBridgeURI_SLAS"/>
+                <attribute attribute-id="clientIPHeaderName"/>
+                <attribute attribute-id="restoreSessionAttributes_SLAS"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

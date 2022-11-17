@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="controller.internal.cred">
+        <url/>
+        <user-id>storefront</user-id>
+        <password/>
+    </service-credential>
+
+    <service-credential service-credential-id="sfcc-slas-auth-cred">
+        <url/>
+        <user-id/>
+    </service-credential>
+
+    <service-credential service-credential-id="sfcc-slas-scapi-cred-baskets">
+        <url/>
+        <user-id/>
+    </service-credential>
+
+    <service-profile service-profile-id="controller.internal.prof">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>false</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="sfcc-slas-auth-http">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>3</cb-calls>
+        <cb-millis>10000</cb-millis>
+    </service-profile>
+
+    <service service-id="controller.internal">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>sfcc-controller</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>controller.internal.prof</profile-id>
+        <credential-id>controller.internal.cred</credential-id>
+    </service>
+
+    <service service-id="sfcc-slas-auth">
+        <service-type>HTTPForm</service-type>
+        <enabled>true</enabled>
+        <log-prefix>sfcc-slas-auth</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sfcc-slas-auth-http</profile-id>
+        <credential-id>sfcc-slas-auth-cred</credential-id>
+    </service>
+
+    <service service-id="sfcc-slas-ocapi-session-bridge">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>sfcc-slas-ocapi-session</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sfcc-slas-auth-http</profile-id>
+    </service>
+
+    <service service-id="sfcc-slas-scapi-baskets">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>sfcc-slas-scapi-baskets</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>sfcc-slas-auth-http</profile-id>
+        <credential-id>sfcc-slas-scapi-cred-baskets</credential-id>
+    </service>
+
+</services>

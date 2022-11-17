@@ -1,0 +1,22 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "env": {
+        "mocha": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:es5/no-es2015"
+    ],
+    "rules": {
+        "require-jsdoc": "off",
+        "max-len": "off",
+        "quote-props": "off",
+        "no-new": "off",
+        "valid-jsdoc": "off"
+    },
+    "plugins": [
+        "es5"
+    ]
+}

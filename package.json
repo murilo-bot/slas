@@ -1,0 +1,37 @@
+{
+    "name": "plugin_slas",
+    "version": "6.3.0",
+    "description": "Plugin to use SLAS for login with SFRA code",
+    "scripts": {
+        "cover": "sgmf-scripts --cover 'test/unit'",
+        "test": "sgmf-scripts --test test/unit/**/*.js",
+        "test:e2e": "sgmf-scripts --test test/e2e/**/*.js",
+        "lint": "sgmf-scripts --lint js",
+        "format": "prettier --write '.'",
+        "upload": "sgmf-scripts --upload -- ",
+        "uploadCartridge": "sgmf-scripts --uploadCartridge plugin_slas"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "chai-subset": "^1.6.0",
+        "eslint": "^3.19.0",
+        "eslint-config-airbnb-base": "^5.0.3",
+        "eslint-plugin-es5": "^1.5.0",
+        "eslint-plugin-import": "^1.16.0",
+        "eslint-plugin-sitegenesis": "~1.0.0",
+        "jsdom": "^19.0.0",
+        "node-fetch": "^2.6.7",
+        "prettier": "^2.7.1",
+        "proxyquire": "1.7.4",
+        "sgmf-scripts": "^2.4.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SalesforceCommerceCloud/plugin_slas.git"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": true,
+        "trailingComma": "none"
+    }
+}
